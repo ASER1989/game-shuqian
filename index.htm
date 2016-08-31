@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://yx.h5uc.com/shuqian/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>数钱数到手抽筋</title>
+<script type="text/javascript" async="" src="./Scripts/o.js"></script><script src="./Scripts/hm.js"></script><script type="text/javascript">
+var GID = "shuqian";
+var SCORE_LIMIT = 6000;
+var APP_LIST_URL = 'http://more.aiwanpai.com/';
+</script>
+<script type="text/javascript" src="./Scripts/jquery-2.1.1.min.js"></script>
+	<!--<script src="./Scripts/l.js"></script>-->
+	<!--<script type="text/javascript">var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="//hm.baidu.com/hm.js?fa356a94bf5ae253b76fefa953bb56e4";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>-->
+<script type="text/javascript" src="./Scripts/jquery.cookie.js"></script>
+<script type="text/javascript" src="./Scripts/createjs-2013.12.12.min.js"></script>
+<script type="text/javascript" src="./Scripts/qipa_app.js"></script>
+<script type="text/javascript" src="./Scripts/qipa_stage.js"></script>
+<script type="text/javascript" src="./Scripts/main.js"></script>
+<style type="text/css">
+html,body,canvas {
+margin: 0px;
+padding: 0px;
+border:none;
+text-align: center;
+background-color: black;
+}
+canvas {
+background-color: white;
+}
+</style>
+</head>
+<body>
+<canvas id="stage" width="640" height="960" style="margin-top: 0px; width: 320px; height: 480px;">
+您的浏览器不支持html5, 请换用支持html5的浏览器。
+</canvas>
+<script language="javascript">
+		var mebtnopenurl = 'http://more.aiwanpai.com/';
+		window.shareData = {
+		        "imgUrl": "http://more.aiwanpai.com/youxi/shuqian/icon.png",
+		        "timeLineLink": "http://more.aiwanpai.com/youxi/shuqian",
+		        "tTitle": "数钱数到手抽筋",
+		        "tContent": "数钱数到手抽筋"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://more.aiwanpai.com/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="我30秒内数了"+myData.score+"元钞票，手都快抽筋，你也来试试看！";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id="share" style="display: none">
+			<img width="100%" src="./Scripts/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "sqsdscj" };
+			
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName = "数了"+score+"元";
+				if(score>0){
+					if (confirm("我勒个去了，30秒你数了"+score+"元！快通知一下小伙伴吧！")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("要将成绩提交到游戏排行榜吗？")) {
+                           
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+			<div style="display: none;">
+	
+			</div>
+
+</div></body></html>
